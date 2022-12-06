@@ -1,17 +1,109 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 1
+      Events
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <br>
+  <ion-segment value="list">
+    <ion-segment-button value="list">
+      <ion-label>List View</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="calendar">
+      <ion-label>Calendar View</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+  <br>
+  <ion-list>
+    <ion-accordion-group [multiple]="true" [value]="['first']">
+      <ion-accordion value="first">
+        <ion-item slot="header" color="light">
+          <ion-label>Upcoming</ion-label>
+        </ion-item>
+        <div class="ion-padding" slot="content">
+          <ion-card>
+            <ion-card-header>
+              <ion-card-subtitle>Date: Jan 20, 2023 - 3:00 PM</ion-card-subtitle>
+              <ion-row>
+                <ion-col>
+              <ion-card-title>UT Tech Con</ion-card-title>
+            </ion-col>
+              <ion-col size="2">
+              <ion-button fill="clear" size="small"><ion-icon slot="icon-only" name="pencil-outline"></ion-icon></ion-button>
+            </ion-col>
+            </ion-row>
+            </ion-card-header>
+            <ion-card-content>
+                  <ion-card-subtitle>Location: UT Main Building</ion-card-subtitle>
+                  <ion-note>Casual attire, going with Jim and Nancy. Meet at Unionville station.</ion-note>
+            </ion-card-content>
+          </ion-card>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+          <ion-card>
+            <ion-card-header>
+              <ion-card-subtitle>Date: Jan 20, 2023 - 3:00 PM</ion-card-subtitle>
+              <ion-row>
+                <ion-col>
+              <ion-card-title>UT Tech Con</ion-card-title>
+            </ion-col>
+              <ion-col size="2">
+              <ion-button fill="clear" size="small"><ion-icon slot="icon-only" name="pencil-outline"></ion-icon></ion-button>
+            </ion-col>
+            </ion-row>
+            </ion-card-header>
+            <ion-card-content>
+                  <ion-card-subtitle>Location: UT Main Building</ion-card-subtitle>
+                  <ion-note>Casual attire, going with Jim and Nancy. Meet at Unionville station.</ion-note>
+            </ion-card-content>
+          </ion-card>
+        </div>
+      </ion-accordion>
+      <ion-accordion value="second">
+        <ion-item slot="header" color="light">
+          <ion-label>Past</ion-label>
+        </ion-item>
+        <div class="ion-padding" slot="content">
+          <ion-card>
+            <ion-card-header>
+              <ion-card-subtitle>Date: Jan 20, 2023 - 3:00 PM</ion-card-subtitle>
+              <ion-row>
+                <ion-col>
+              <ion-card-title>UT Tech Con</ion-card-title>
+            </ion-col>
+              <ion-col size="2">
+              <ion-button fill="clear" size="small"><ion-icon slot="icon-only" name="pencil-outline"></ion-icon></ion-button>
+            </ion-col>
+            </ion-row>
+            </ion-card-header>
+            <ion-card-content>
+                  <ion-card-subtitle>Location: UT Main Building</ion-card-subtitle>
+                  <ion-note>Casual attire, going with Jim and Nancy. Meet at Unionville station.</ion-note>
+            </ion-card-content>
+          </ion-card>
+
+          <ion-card>
+            <ion-card-header>
+              <ion-card-subtitle>Date: Jan 20, 2023 - 3:00 PM</ion-card-subtitle>
+              <ion-row>
+                <ion-col>
+              <ion-card-title>UT Tech Con</ion-card-title>
+            </ion-col>
+              <ion-col size="2">
+              <ion-button fill="clear" size="small"><ion-icon slot="icon-only" name="pencil-outline"></ion-icon></ion-button>
+            </ion-col>
+            </ion-row>
+            </ion-card-header>
+            <ion-card-content>
+                  <ion-card-subtitle>Location: UT Main Building</ion-card-subtitle>
+                  <ion-note>Casual attire, going with Jim and Nancy. Meet at Unionville station.</ion-note>
+            </ion-card-content>
+          </ion-card>
+      
+      </div>
+      </ion-accordion>
+    </ion-accordion-group>
+  </ion-list>
 </ion-content>

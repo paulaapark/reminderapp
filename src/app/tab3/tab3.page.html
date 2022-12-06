@@ -1,17 +1,75 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 3
+      New Event/Reminder
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <br>
+  <br>
+  <ion-accordion-group>
+    <ion-accordion value="first">
+      <ion-item slot="header" color="light">
+        <ion-label>Details</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">
+        <ion-item>
+          <ion-label position="floating">Title:</ion-label>
+          <ion-input placeholder="Title"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Location:</ion-label>
+          <ion-input placeholder="Where is this event?"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>Description:</ion-label>
+          <ion-textarea placeholder="What's this event about?" [autoGrow]="true"></ion-textarea>
+        </ion-item>
+      </div>
+    </ion-accordion>
+    <ion-accordion value="second">
+      <ion-item slot="header" color="light">
+        <ion-label>Date & Time</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">
+        <ion-row>
+        <ion-col>From</ion-col>
+        <ion-col size="8">
+        <ion-datetime-button datetime="datetime"></ion-datetime-button>
+        <ion-modal [keepContentsMounted]="true">
+          <ng-template>
+            <ion-datetime id="datetime"></ion-datetime>
+          </ng-template>
+        </ion-modal>
+        </ion-col>
+        </ion-row>
 
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+        <ion-row>
+          <ion-col>To</ion-col>
+          <ion-col size="8">
+          <ion-datetime-button datetime="datetime"></ion-datetime-button>
+          <ion-modal [keepContentsMounted]="true">
+            <ng-template>
+              <ion-datetime id="datetime"></ion-datetime>
+            </ng-template>
+          </ion-modal>
+          </ion-col>
+          </ion-row>
+        <ion-button expand="full" fill="clear" (click)="openPicker()">Repeat?</ion-button>
+      </div>
+    </ion-accordion>
+  </ion-accordion-group>
+
+  <ion-list>
+    <ion-item>
+      <ion-label>Remind Me?</ion-label>
+        <ion-button fill="clear" slot="end" >
+        <ion-toggle (click)="openReminder()" ></ion-toggle>
+      </ion-button>
+    </ion-item>
+  </ion-list>
+  <ion-button expand="block">Submit</ion-button>
+  
 </ion-content>

@@ -6,7 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['tab2.page.scss']
 })
 export class Tab2Page {
+  isModalOpen = false;
 
-  constructor() {}
+  setOpen(isOpen: boolean) {
+    this.isModalOpen = isOpen;
+  }
 
 }
