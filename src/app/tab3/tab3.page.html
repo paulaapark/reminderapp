@@ -1,6 +1,6 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
+    <ion-title color="new">
       New Event/Reminder
     </ion-title>
   </ion-toolbar>
@@ -9,22 +9,22 @@
 <ion-content [fullscreen]="true">
   <br>
   <br>
-  <ion-accordion-group>
+  <ion-accordion-group [value]="['second']">
     <ion-accordion value="first">
       <ion-item slot="header" color="light">
         <ion-label>Details</ion-label>
       </ion-item>
       <div class="ion-padding" slot="content">
         <ion-item>
-          <ion-label position="floating">Title:</ion-label>
+          <ion-label position="floating" color="new">Title:</ion-label>
           <ion-input placeholder="Title"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label position="floating">Location:</ion-label>
+          <ion-label position="floating" color="new">Location:</ion-label>
           <ion-input placeholder="Where is this event?"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label>Description:</ion-label>
+          <ion-label color="new">Description:</ion-label>
           <ion-textarea placeholder="What's this event about?" [autoGrow]="true"></ion-textarea>
         </ion-item>
       </div>
@@ -35,7 +35,7 @@
       </ion-item>
       <div class="ion-padding" slot="content">
         <ion-row>
-        <ion-col>From</ion-col>
+        <ion-col><ion-label color="new">From</ion-label></ion-col>
         <ion-col size="8">
         <ion-datetime-button datetime="datetime"></ion-datetime-button>
         <ion-modal [keepContentsMounted]="true">
@@ -47,7 +47,7 @@
         </ion-row>
 
         <ion-row>
-          <ion-col>To</ion-col>
+          <ion-col><ion-label color="new">To</ion-label></ion-col>
           <ion-col size="8">
           <ion-datetime-button datetime="datetime"></ion-datetime-button>
           <ion-modal [keepContentsMounted]="true">
@@ -57,7 +57,7 @@
           </ion-modal>
           </ion-col>
           </ion-row>
-        <ion-button expand="full" fill="clear" (click)="openPicker()">Repeat?</ion-button>
+        <ion-button expand="full" fill="clear" (click)="openPicker()" color="new">Repeat?</ion-button>
       </div>
     </ion-accordion>
   </ion-accordion-group>
@@ -66,10 +66,11 @@
     <ion-item>
       <ion-label>Remind Me?</ion-label>
         <ion-button fill="clear" slot="end" >
-        <ion-toggle (click)="openReminder()" ></ion-toggle>
+        <ion-toggle (click)="openReminder()" color="new"></ion-toggle>
       </ion-button>
     </ion-item>
   </ion-list>
-  <ion-button expand="block">Submit</ion-button>
+  <br>
+  <ion-button expand="block" color="new">Submit</ion-button>
   
 </ion-content>
